@@ -682,7 +682,7 @@ static int swr_dmic_probe(struct swr_device *pdev)
 		ret = -ENOMEM;
 		goto dev_err;
 	}
-	strlcpy(prefix_name, swr_dmic_name_prefix_of, name_len + 1);
+	strlcpy(prefix_name, swr_dmic_name_prefix_of, sizeof(prefix_name));
 	component->name_prefix = prefix_name;
 
 	return 0;
