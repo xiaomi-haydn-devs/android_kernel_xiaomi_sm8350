@@ -339,6 +339,8 @@ ifeq ($(TARGET_PRODUCT), haydn)
 	CDEFINES += -DCONFIG_TARGET_PRODUCT_HAYDN
 endif
 
+CDEFINES += -DCONFIG_MIUS_PROXIMITY
+
 KBUILD_CPPFLAGS += $(CDEFINES)
 
 # Currently, for versions of gcc which support it, the kernel Makefile
@@ -353,6 +355,8 @@ endif
 ifeq ($(call cc-option-yn, -Wheader-guard),y)
 EXTRA_CFLAGS += -Wheader-guard
 endif
+
+EXTRA_CFLAGS += -Wno-unused-variable
 
 ifeq ($(KERNEL_BUILD), 0)
 KBUILD_EXTRA_SYMBOLS +=$(OUT)/obj/vendor/qcom/opensource/audio-kernel/dsp/Module.symvers

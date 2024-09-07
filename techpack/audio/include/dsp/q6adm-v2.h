@@ -238,6 +238,7 @@ int adm_set_custom_chmix_cfg(int port_id, int copp_idx,
 			     unsigned int session_id, char *params,
 			     uint32_t params_length, int direction,
 				 int stream_type);
+int adm_set_device_model(int device_model);
 int adm_swap_speaker_channels(int port_id, int copp_idx, int sample_rate,
 				bool spk_swap);
 int adm_programable_channel_mixer(int port_id, int copp_idx, int session_id,
